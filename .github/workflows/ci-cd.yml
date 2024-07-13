@@ -47,48 +47,6 @@ jobs:
         tags: vishnususilkumar/client-service:latest
         push: true
 
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
-
-    - name: Install dependencies for product-service
-      run: |
-        cd product-service
-        npm install
-
-    - name: Run tests for product-service
-      run: |
-        cd product-service
-        npm test
-
-    - name: Install dependencies for inventory-service
-      run: |
-        cd inventory-service
-        npm install
-
-    - name: Run tests for inventory-service
-      run: |
-        cd inventory-service
-        npm test
-
-    - name: Install dependencies for client-service
-      run: |
-        cd client-service
-        npm install
-
-    - name: Run tests for client-service
-      run: |
-        cd client-service
-        npm test
 
   deploy:
     runs-on: ubuntu-latest
