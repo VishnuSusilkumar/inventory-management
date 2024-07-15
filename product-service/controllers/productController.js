@@ -21,6 +21,8 @@ const getAllProducts = async (req, res) => {
     }
 };
 
+
+
 function generateProductId() {
     return products.length + 1;
 }
